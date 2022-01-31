@@ -13,19 +13,155 @@ const swiper = new Swiper('.swiper', {
       mousewheel: true,
 });
 
-let greenBookSchedule = ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '20:05'];
-let seanses = document.querySelector('.seanses');
 
-for(let i = 0; i < greenBookSchedule.length; i++) {
-    let a = document.createElement('a');
-    a.className = 'time__block';
-    a.href = '/green-book-tickets.html';
-    a.innerHTML = ((greenBookSchedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
-    seanses.append(a);
+let greenBookData = {
+    localName: '_green_book',
+    name: 'Зеленая Книга',
+    imageUrl: 'assets/images/greenbook_m.jpg',
+    ticketsHref: '/green-book-tickets.html',
+    schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '20:05'],
+    genres: [' Комедия ', ' Драма ', ' Биография '],
+    year: '2019',
+    country: 'США',
+    director: 'Питер Фарелли',
+    ageLimit: '16+',
+    time: '02:10',
+    trailerURL: '',
+}
+
+let parentsData = {
+    localName: '_drunk_parents',
+    name: 'Родители легкого поведения',
+    ticketsHref: '/drunk_parents_tickets.html',
+    imageUrl: 'assets/images/drunk_parents_m.jpg',
+    schedule: ['13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30'],
+    genres: [' Комедия '],
+    year: '2019',
+    country:  'США',
+    director: 'Питер Фарелли',
+    ageLimit: '16+',
+    time: '01:36',
+    trailerURL: '',
+}
+
+let alitaData = {
+    localName: '_alita',
+    name: 'Алита: Боевой Ангел',
+    ticketsHref: '/alita_tickets.html',
+    imageUrl: 'assets/images/alita_m.jpg',
+    schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '21:00'],
+    genres: [' Фантастика ', ' боевик ', ' триллер ',],
+    year: '2019',
+    country: 'США',
+    director: 'Роберт Родригес',
+    ageLimit: '16+',
+    time: '02:01',
+    trailerURL: '',
+}
+
+let petDragonsData = {
+    localName: '_pet_dragon',
+    name: 'Как приручить дракона',
+    ticketsHref: '/pet_dragons_tickets.html',
+    imageUrl: 'assets/images/pet_dragons_m.jpg',
+    schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30',],
+    genres: [' Мультфильм',' Фентези', ' Боевик',],
+    year: '2019',
+    country: 'США',
+    director: 'Дин ДеБлуа',
+    ageLimit: '6+',
+    time: '01:44',
+    trailerURL: '',
+}
+
+let captainMarvelData = {
+    localName: '_captain_marvel',
+    name: 'Капитан Марвел',
+    ticketsHref: '/captain_marvel_tickets.html',
+    imageUrl: 'assets/images/captain_marvel_m.jpg',
+    schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30','20:05','20:55','21:25','22:05','23:15','00:35',],
+    genres: [' Фантастика',' Боевик',' Приключения',],
+    year: '2019',
+    country: 'США',
+    director: 'Анна Боден, Райан Флек',
+    ageLimit: '16+',
+    time: '02:03',
+    trailerURL: '',
 }
 
 
-let sliderSelect = function () {
+
+let seanses = document.querySelector('.seanses');
+
+let createDates = (filmObj, divTarget) => {
+    for(let i = 0; i < filmObj.schedule.length; i++) {
+        let a = document.createElement('a');
+        a.className = 'time__block';
+        a.href = filmObj.ticketsHref;
+        a.innerHTML = ((filmObj.schedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
+        divTarget.append(a);
+    }
+}
+let createDatesCheck = () => {
+    if (seanses != null) {
+        createDates(greenBookData, seanses)
+    }
+}
+createDatesCheck()
+
+
+
+
+let schedule = document.querySelector('.schedule')
+
+let scheduleMainFunction = (film) => {
+    // let div = document.createElement('div')
+    schedule.insertAdjacentHTML('beforeend', `<div class="schedule-item ${film.localName}">
+    <img src="${film.imageUrl}" alt="${film.name}">
+    <div class="schedule-desc">
+        <h3>${film.name}</h3>
+        <div class="desc-main">
+            <p>${film.year}</p>
+            <p>${film.country}</p>
+            <p>${film.director}</p>
+            <p>${film.genres}</p>
+            <p>${film.time}</p>
+            <p>${film.ageLimit}</p>
+        </div>
+        <div class="schedule-seanses"></div>
+        <div class="desc-details-trailer">
+            <div class="__detail">
+                <a href="${film.ticketsHref}"></a>
+                <p>Подробнее</p>
+            </div>
+            <div class="__trailer">
+                <a href="${film.trailerURL}"></a>
+                <p>Смотреть трейлер</p>
+            </div>
+        </div>
+    </div>
+</div>`)
+let filmDiv = document.querySelector(`.${film.localName}`)
+let thisFilm = filmDiv.querySelector('.schedule-seanses')
+// schedule.append(div)
+createDates(film, thisFilm)
+}
+
+let createScheduleCheck = () => {
+    if (schedule != null) {
+        scheduleMainFunction(captainMarvelData)
+        scheduleMainFunction(petDragonsData)
+        scheduleMainFunction(alitaData)
+        scheduleMainFunction(parentsData)
+        scheduleMainFunction(greenBookData)
+    }
+}
+createScheduleCheck()
+
+
+
+
+let sliderSelect =  () => {
     let rightAsideSlider = document.querySelector('.right-cinema-slider')
 if (rightAsideSlider != null) {
     rightAsideSlider.querySelectorAll('.swiper-slide').forEach(function(el){
@@ -541,7 +677,7 @@ let fillRoomData = () => {
     }
 
 }
-fillRoomData()
+if (seats1 != null) {fillRoomData()}
 
 
 

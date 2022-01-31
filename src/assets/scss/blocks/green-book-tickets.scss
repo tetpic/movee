@@ -126,23 +126,26 @@
         line-height: 50px;
         margin-bottom: 57px;
     }
-    .dates {
-        width: 586px;
-        justify-content: space-between;
-        display: flex;
-        font-family: 'Source Sans Pro', sans-serif;
-        .day {
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            opacity: .2;
-        }
-        .date {
-            opacity: .5;
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 26px;
-        }
+
+}
+
+.dates {
+    color: white;
+    width: 586px;
+    justify-content: space-between;
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    .day {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        opacity: .2;
+    }
+    .date {
+        opacity: .5;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
     }
 }
 

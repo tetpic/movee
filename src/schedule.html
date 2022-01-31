@@ -5,4 +5,79 @@ title: Schedule
 <div class="wrapper">
     <h1 class="schedule-heading">Расписание</h1>
 
+    {{> dates }}
+</div>
+
+
+<div class="wrapper">
+        <div class="schedule-film-filter">
+        <div class="filter age-limitation">
+            <p class="filter-desc">Жанр</p>
+            <select name="genre" id="genre-select">
+                <option value="any">Любой жанр</option>
+                <option value="action">Боевик</option>
+                <option value="comedy">Комедия</option>
+                <option value="fantasy">Фантастика</option>
+                <option value="drama">Драма</option>
+            </select>
+        </div>
+        <div class="filter country-filter">
+            <p class="filter-desc">Страна</p>
+            <select name="country" id="country-select">
+                <option value="any">Любая страна</option>
+                <option value="usa">США</option>
+                <option value="italy">Италия</option>
+                <option value="russia">Россия</option>
+                <option value="france">Франция</option>
+                <option value="germany">Германия</option>
+                <option value="united-kingdom">Великобритания</option>
+            </select>
+        </div>
+        <div class="filter age-limitation">
+            <p class="filter-desc">Возрастное ограничение</p>
+            <select name="age-limit" id="age-limit-select">
+                <option value="any">Любое</option>
+                <option value="baby">0+</option>
+                <option value="little-kid">6+</option>
+                <option value="kid">10+</option>
+                <option value="junior">14+</option>
+                <option value="youth">16+</option>
+                <option value="adult">18+</option>
+            </select>
+        </div>
+        <form class="find-bar">
+            <input type="search" placeholder="Поиск по названию">
+            <button type="submit"></button>
+          </form>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="schedule">
+        <!-- <div class="schedule-item film-name">
+            <img src="../" alt="unavailable">
+            <div class="schedule-desc">
+                <h3>captain marvel</h3>
+                <div class="desc-main">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="schedule-seanses"></div>
+                <div class="desc-details-trailer">
+                    <div class="__detail">
+                        <a href="#"></a>
+                        <p>Подробнее</p>
+                    </div>
+                    <div class="__trailer">
+                        <a href="#"></a>
+                        <p>Смотреть трейлер</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
 </div>

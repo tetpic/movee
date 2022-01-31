@@ -1,29 +1,26 @@
 .header-aside-bar {
-    .background {
-        position: absolute;
-        width: 230px;
-        height: 1030px;
-        background: linear-gradient(#6E49FF, #3A1CB3) ;
-    }
-    .bar-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-left: 50px;
-        padding-bottom: 50px;
-        padding-top: 50px;
-        max-height: 910px;
-        height: 90vh;
-
-    }
-    overflow: hidden;
-    z-index: 1000;
     position: fixed;
     top: 0;
     width: 230px;
     height: 100vh;
-    max-height: 1030px;
+    z-index: 1000;
+    overflow: hidden;
+    .background {
+        position: absolute;
+        width: 230px;
+        height: 100vh;
+        background: linear-gradient(#6E49FF, #3A1CB3) ;
+    }
+    .bar-wrapper {
+        padding-left: 50px;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
    
     img {
         position: relative;
@@ -34,12 +31,7 @@
 }
 
 ._aside-logo {
-    // font-size: 32px;
     position: relative;
-    // font-family: 'Blogger Sans';
-    // font-size: 32px;
-    // line-height: 35px;
-    // color: white;
 }
 
 .logo {
@@ -51,32 +43,32 @@
 }
 
 #city {
-    margin-top: 20px;
     position: relative;
+    margin-top: 20px;
+    margin-right: 2rem;
     width: 90px;
-    background: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-width: 0px;
-    background-color:#6c47fc;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     color: white;
-    background-image: url('../img/svg/_triangle.svg');
+    border-width: 0px;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color:#6c47fc;
+    background-image: url('../images/svg/_triangle.svg');
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 10px;
     border-radius: 2px;
-    margin-right: 2rem;
 
 }
 
 .sections {
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 150px;
     justify-content: space-between;
-    position: relative;
+    height: 150px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     color: white;

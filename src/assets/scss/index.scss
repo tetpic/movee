@@ -2,38 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 @import 'blocks/sidebar.scss';
 @import 'blocks/schedule.scss';
-// @font-face {
-// 	font-family: 'Conv_SourceSansPro-SemiBold';
-// 	src: url('fonts/SourceSansPro-SemiBold.eot');
-// 	src: local('☺'), 
-//     url('../fonts/SourceSansPro-SemiBold.woff') format('woff'), 
-//     url('../fonts/SourceSansPro-SemiBold.ttf') format('truetype'), 
-//     url('../fonts/SourceSansPro-SemiBold.svg') format('svg');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@import 'blocks/news.scss';
+@import 'blocks/green-book-tickets.scss';
 
-// @font-face {
-// 	font-family: 'Conv_SourceSansPro-Regular';
-// 	src: url('fonts/SourceSansPro-Regular.eot');
-// 	src: local('☺'), 
-//     url('../fonts/SourceSansPro-Regular.woff') format('woff'), 
-//     url('../fonts/SourceSansPro-Regular.ttf') format('truetype'), 
-//     url('../fonts/SourceSansPro-Regular.svg') format('svg');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Conv_SourceSansPro-SemiBold';
+	src: url('assets/fonts/SourceSansPro-SemiBold.eot');
+	src: local('☺'), 
+    url('../fonts/SourceSansPro-SemiBold.woff') format('woff'), 
+    url('../fonts/SourceSansPro-SemiBold.ttf') format('truetype'), 
+    url('../fonts/SourceSansPro-SemiBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
-// @font-face {
-// 	font-family: 'Conv_SourceSansPro-Light';
-// 	src: url('fonts/SourceSansPro-Light.eot');
-// 	src: local('☺'), 
-//     url('../fonts/SourceSansPro-Light.woff') format('woff'), 
-//     url('../fonts/SourceSansPro-Light.ttf') format('truetype'), 
-//     url('../fonts/SourceSansPro-Light.svg') format('svg');
-// 	font-weight: 300;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Conv_SourceSansPro-Regular';
+	src: url('assts/fonts/SourceSansPro-Regular.eot');
+	src: local('☺'), 
+    url('../fonts/SourceSansPro-Regular.woff') format('woff'), 
+    url('../fonts/SourceSansPro-Regular.ttf') format('truetype'), 
+    url('../fonts/SourceSansPro-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_SourceSansPro-Light';
+	src: url('assets/fonts/SourceSansPro-Light.eot');
+	src: local('☺'), 
+    url('../fonts/SourceSansPro-Light.woff') format('woff'), 
+    url('../fonts/SourceSansPro-Light.ttf') format('truetype'), 
+    url('../fonts/SourceSansPro-Light.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
 
 @font-face {
     font-family: 'Blogger Sans';
@@ -147,7 +150,7 @@
     font-size: 14px;
 }
 
-@import 'blocks/green-book-tickets.scss';
+
 
 .movie-descriptions {
     color: white;

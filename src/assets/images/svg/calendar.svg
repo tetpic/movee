@@ -1,0 +1,17 @@
+<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_1_8200" fill="white">
+<rect y="0.869629" width="14" height="11" rx="1"/>
+</mask>
+<rect y="0.869629" width="14" height="11" rx="1" stroke="#714DFF" stroke-width="3" mask="url(#path-1-inside-1_1_8200)"/>
+<rect opacity="0.5" x="3" y="3.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="6" y="3.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="9" y="3.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="3" y="5.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="6" y="5.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="9" y="5.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="3" y="7.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="6" y="7.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect opacity="0.5" x="9" y="7.66943" width="2" height="1.5" rx="0.75" fill="#714DFF"/>
+<rect x="3.95605" width="2.26087" height="1.78043" rx="0.890217" transform="rotate(90 3.95605 0)" fill="#714DFF"/>
+<rect x="11.7803" width="2.26087" height="1.78043" rx="0.890217" transform="rotate(90 11.7803 0)" fill="#714DFF"/>
+</svg>

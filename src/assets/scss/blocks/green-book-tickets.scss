@@ -422,5 +422,11 @@
         object-fit: cover;
         width: 100%;
     }
-
+    .swiper-scrollbar {
+        position: relative;
+    
+    }
+    .swiper-scrollbar-drag {
+        background-color: rgba(255, 255, 255, 0.466); 
+    }
 }

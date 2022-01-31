@@ -13,6 +13,18 @@ const swiper = new Swiper('.swiper', {
       mousewheel: true,
 });
 
+let framesSLider = new Swiper('.frames-wrapper', {
+
+    slidesPerView: 'auto',
+    freeMode: true,
+    spaceBetween: 30,
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+    
+})
+
 
 let greenBookData = {
     localName: '_green_book',
@@ -93,29 +105,27 @@ let captainMarvelData = {
 
 let seanses = document.querySelector('.seanses');
 
-let createDates = (filmObj, divTarget) => {
-    for(let i = 0; i < filmObj.schedule.length; i++) {
-        let a = document.createElement('a');
-        a.className = 'time__block';
-        a.href = filmObj.ticketsHref;
-        a.innerHTML = ((filmObj.schedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
-        divTarget.append(a);
+function createDates(filmObj, divTarget) {
+  
+        for(let i = 0; i < filmObj.schedule.length; i++) {
+            let a = document.createElement('a');
+                a.className = 'time__block';
+                a.href = filmObj.ticketsHref;
+                a.innerHTML = ((filmObj.schedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
+                divTarget.append(a);
+        }
     }
-}
-let createDatesCheck = () => {
-    if (seanses != null) {
-        createDates(greenBookData, seanses)
-    }
-}
-createDatesCheck()
+
+
+if (seanses) {createDates(greenBookData, seanses)}
+
 
 
 
 
 let schedule = document.querySelector('.schedule')
 
-let scheduleMainFunction = (film) => {
-    // let div = document.createElement('div')
+function scheduleMainFunction(film) {
     schedule.insertAdjacentHTML('beforeend', `<div class="schedule-item ${film.localName}">
     <img src="${film.imageUrl}" alt="${film.name}">
     <div class="schedule-desc">
@@ -143,12 +153,11 @@ let scheduleMainFunction = (film) => {
 </div>`)
 let filmDiv = document.querySelector(`.${film.localName}`)
 let thisFilm = filmDiv.querySelector('.schedule-seanses')
-// schedule.append(div)
-createDates(film, thisFilm)
+if (schedule) {createDates(film, thisFilm)}
 }
 
-let createScheduleCheck = () => {
-    if (schedule != null) {
+function createScheduleCheck() {
+    if (schedule) {
         scheduleMainFunction(captainMarvelData)
         scheduleMainFunction(petDragonsData)
         scheduleMainFunction(alitaData)
@@ -161,37 +170,35 @@ createScheduleCheck()
 
 
 
-let sliderSelect =  () => {
+function sliderSelect() {
     let rightAsideSlider = document.querySelector('.right-cinema-slider')
-if (rightAsideSlider != null) {
-    rightAsideSlider.querySelectorAll('.swiper-slide').forEach(function(el){
-        el.addEventListener('click', function() {
-            let dataName = el.getAttribute('data-name')
-            let backGround = document.querySelectorAll('.background__image')
-            let backGroundData = () => backGround.forEach(function(el) {
-                if (dataName == el.getAttribute('data-name')) {
-                    el.style.display = 'block';
-                } 
-                else if (el.getAttribute('data-name') == null) {
-                    el.style.display = '';
-                }
-                else {
-                    el.style.display = 'none';
-                }
+    if (rightAsideSlider) {
+        rightAsideSlider.querySelectorAll('.swiper-slide').forEach(function(el){
+            el.addEventListener('click', function() {
+                let dataName = el.getAttribute('data-name')
+                let backGround = document.querySelectorAll('.background__image')
+                let backGroundData = () => backGround.forEach(function(el) {
+                    if (dataName == el.getAttribute('data-name')) {
+                        el.style.display = 'block';
+                    } 
+                    else if (el.getAttribute('data-name') == null) {
+                        el.style.display = '';
+                    }
+                    else {
+                        el.style.display = 'none';
+                    }
+                })
+                backGroundData()
             })
-            backGroundData()
-           
         })
-    })
-}
-else {console.log('not on this page')}
+    }
 }
 sliderSelect();
 
 
-let todayFilm = () => {
+function todayFilm() {
     let tf = document.querySelectorAll('.today__film')
-    if (tf != null) {
+    if (tf) {
         tf.forEach(function (el) {
             el.addEventListener('click', () => {
                 let parentPosition = document.querySelector('.tomorrow-soon').getBoundingClientRect()
@@ -203,13 +210,12 @@ let todayFilm = () => {
             })
         })
     }
-    else {console.log('not on this page')}
 }
 todayFilm();
 
 
-let insertFunction = function(el) {
-    let insertFilm = document.querySelector('.afisha')
+function insertFilm(el) {
+    let afisha = document.querySelector('.afisha')
     let div = document.createElement('div')
 
     div.setAttribute('class', 'film-presentation')
@@ -219,11 +225,9 @@ let insertFunction = function(el) {
         + `<div class="parental-control">${el.parental}</div>`
         + `</div>`
         + ` <p class="film-description">${el.description}</p>`
-    if (insertFilm != null) {
-        insertFilm.append(div)
-    } else {
-        console.log('not on this page')
-    }   
+    if (afisha) {
+        afisha.append(div)
+    } 
 } 
 
 
@@ -303,12 +307,12 @@ let filmsData = [{
 ]
 
 
-filmsData.forEach(insertFunction)
+filmsData.forEach(insertFilm)
 
 // =================рисуем стульчики=============================
 
 
-    window.seatsPatternDiv = document.querySelector('.seats-pattern');
+let seatsPatternDiv = document.querySelector('.seats-pattern');
 
 function makeSeats(el) {
     let div = document.createElement('div');
@@ -528,15 +532,13 @@ let row1 = [
     {occupied: false, costs: 300, row: 9, seat: 22},
 ]
 
-let makinSeats = () => {
-    if (seatsPatternDiv != null) {
+function makinSeats() {
+    if (seatsPatternDiv) {
         row1.forEach(function(el) {
             makeSeats(el);
         })
     }
-    else {
-        console.log('not on this page')
-    }
+  
 }
 makinSeats()
 
@@ -574,23 +576,23 @@ else {
 }
 }
 
-let result = function(arr) {
-    if (arr.length == 0) {
-        return 0
+function folding(arr) {
+    if (arr.length !== 0) {
+        return arr.reduce(function(sum, current) {
+           return sum + current
+        })
     }
     else {
-        return arr.reduce(function(sum, current) {
-        return sum + current
-    })
+        return 0
     }
 }
 
 
 
-window.choosenTickets = document.querySelector('.choosen-tickets')
+let choosenTickets = document.querySelector('.choosen-tickets')
 
 function createTickets(room, activeIndex) {
-    if (choosenTickets != null) {
+    if (choosenTickets) {
         choosenTickets.insertAdjacentHTML('beforeend', ` <div class="choosen__ticket" data-index= ${activeIndex}>
         <div class="picked-row-seat">${room[activeIndex].row}ряд, ${room[activeIndex].seat} место</div>
         <div class="picked-seat-cost">
@@ -599,30 +601,22 @@ function createTickets(room, activeIndex) {
         </div>
     </div>`)
     }
-    else {
-        console.log('createTickets undefined')
-    }
-
 }
 
-let ticketsListener = () => {
-    if (choosenTickets != null) {
+function ticketsListener() {
+    if (choosenTickets) {
         choosenTickets.addEventListener('click', (event)=> {
             if(event.target.className === ('x-button')) {
                 let ticket = event.target.parentNode.parentNode
                 let dataIndex = ticket.getAttribute('data-index')
-                console.log(seats1[(+dataIndex)])
                 let seat = seats1[(+dataIndex)]
                 seat.classList.remove('choosen')
                 addIndexToArray(currentSeatIndex, (+dataIndex))
                 addCostToArray(seats1, (+dataIndex), prices, row1)
                 let summNode = document.querySelector('.summ');
-                summNode.innerText = result(prices)
+                summNode.innerText = folding(prices)
             }
             })
-    }
-    else {
-        console.log('ticketsListener undefined')
     }
 } 
 ticketsListener()
@@ -633,11 +627,11 @@ ticketsListener()
 
 let seats1 = document.querySelectorAll('.seat')
 
-window.currentSeatIndex = new Array()
+const currentSeatIndex = new Array()
 
 
-let seatsListener = () => {
-    if (seats1 != null) {
+function seatsListener() {
+    if (seats1) {
         seats1.forEach(function(x) {x.addEventListener('click', function(event){
             event.preventDefault
             let activeIndex = Array.from(seats1).indexOf(event.target)
@@ -645,15 +639,11 @@ let seatsListener = () => {
             addCostToArray(seats1, activeIndex, prices, row1)
             addIndexToArray(currentSeatIndex, activeIndex)
             let summNode = document.querySelector('.summ');
-            summNode.innerText = result(prices)
-            console.log(prices)
-            console.log(window.currentSeatIndex)
+            summNode.innerText = folding(prices)
             })
         })
     }
-    else {
-        console.log('seatsListener undefined')
-    }
+
 }
 seatsListener()
 
@@ -666,51 +656,53 @@ let roomDescription = {
 
 }
 
-let fillRoomData = () => {
-    if (seats1 != null) {
+function fillRoomData() {
+    if (seatsPatternDiv) {
         document.querySelector('.picked-cinema__room').innerText = `ЗАЛ ${roomDescription.number}`
         document.querySelector('.picked-cinema__resolution').innerText = `${roomDescription.resolution}`
         document.querySelector('.picked-cinema__time').innerText = `${roomDescription.time}`
     }
-    else {
-        console.log('roomData not exist on this page')
+}
+
+fillRoomData()
+
+
+
+
+let roomColumns = document.querySelector('.seats-columns');
+let roomRows = document.querySelector('.seats-rows');
+
+function rowsColsShape() {
+    if (seatsPatternDiv) {
+        roomColumns.style.width = (seatsPatternDiv.offsetWidth) + 'px'
+        roomRows.style.height = (seatsPatternDiv.offsetHeight) + 'px'
+        roomColumns.style.marginLeft = (document.querySelector('.seats-wrapper').offsetWidth - seatsPatternDiv.offsetWidth) + 'px'
     }
-
 }
-if (seats1 != null) {fillRoomData()}
+rowsColsShape()
 
-
-
-
-let roomColumns = document.querySelector('.seats-columns')
-let roomRows = document.querySelector('.seats-rows')
-roomRows.style.height = (window.seatsPatternDiv.offsetHeight) + 'px'
-roomColumns.style.width = (window.seatsPatternDiv.offsetWidth) + 'px'
-roomColumns.style.marginLeft = (document.querySelector('.seats-wrapper').offsetWidth - window.seatsPatternDiv.offsetWidth) + 'px'
-
+// ===========create lis with numbers to columns and rows in thr room=============
 function iteratorItems(num, line) {
-    let div = document.createElement('div')
-    div.innerHTML = num
-    line.append(div)
+    let li = document.createElement('li')
+    li.innerHTML = num
+    line.append(li)
 }
 
+// ======iterator for counting numbers================
 function createRowsCols(prop, el) {
     for (let num = 1; num <=(prop); num++) {
         iteratorItems(num, el)
     }
 }
 
+if (seatsPatternDiv) {
+    createRowsCols((roomDescription.columns), roomColumns)
+    createRowsCols((roomDescription.rows), roomRows)
+}
 
-createRowsCols((roomDescription.columns), roomColumns)
-createRowsCols((roomDescription.rows), roomRows)
 
 
 
-let framesSLider = new Swiper('.frames-wrapper', {
-    slidesPerView: 'auto',
-    freeMode: true,
-    spaceBetween: 30,
-})
 
 
 

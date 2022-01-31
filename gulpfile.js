@@ -104,7 +104,7 @@ function css(cb) {
         .pipe(removeComments())
         .pipe(rename({
             suffix: ".min",
-            extname: ".css"
+            extname: ".css",
         }))
         .pipe(dest(path.build.css))
         .pipe(browserSync.reload({stream: true}));

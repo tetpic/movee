@@ -19,7 +19,6 @@
         color: white;
         outline: none;
         border: none;
-        // background-repeat: no-repeat;
     }
     input::-webkit-calendar-picker-indicator { background-image: url(../images/svg/calendar.svg); }
 }
@@ -36,13 +35,9 @@
 }
 
 .news-body {
-    display: grid;
-    grid-template-areas: 
-    'a a b b b'
-    'c c c d d'
-    'e e f f f';
-    row-gap: 40px;
-    column-gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
    
 }
 
@@ -50,18 +45,20 @@
     color: white;
     height: 480px;
     position: relative;
-    padding: 50px;
-    background-color: green;
     border-radius: 10px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
-    button {
+    margin-bottom: 40px;
+    form {
+        z-index: 100;
+    }
+    .news__details {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
         z-index: 100;
         width: 130px;
         height: 50px;
@@ -70,14 +67,19 @@
         text-align: center;
         border-radius: 8px;
         border: none;
+        display: block;
+        text-decoration: none;
+        
     }
     img{
         width: 100%;
+        object-fit: fill;
         // height: 100%;
         z-index: 0;
         position: absolute;
         top: 0;
         left: 0;
+        filter: brightness(.7);
     }
     .news__date {
         z-index: 100;
@@ -86,30 +88,30 @@
     .news__date-header {
         z-index: 100;
     }
- 
+    .news__desc {
+        z-index: 100;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        opacity: .8;
+    }
 }
 
-._news-avengers {
-    grid-area: a;
+.news-body-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 382px;
+    z-index: 100;
+    margin: 50px;
 }
 
-._open-new-cinema {
-    grid-area: b;
+._long {
+    width: 878px;
+    // flex-basis: 2;
 }
 
-._alien {
-    grid-area: c;
+._short {
+    width: 572px;
+    // flex-basis: 1;
 }
-
-._eight-march {
-    grid-area: d;
-}
-
-._muse-concert {
-    grid-area: e;
-}
-
-._special-show-nevod {
-    grid-area: f;
-}
-

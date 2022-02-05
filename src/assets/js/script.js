@@ -222,9 +222,9 @@ function insertFilm(el) {
     div.innerHTML = `<img src= "${el.image}" alt="${el.alt}">` 
         + `<div class="film-name">`
         + ` <h5>${el.name}</h5>`
+        + ` <p class="film-description">${el.description}</p>`
         + `<div class="parental-control">${el.parental}</div>`
         + `</div>`
-        + ` <p class="film-description">${el.description}</p>`
     if (afisha) {
         afisha.append(div)
     } 
@@ -700,8 +700,18 @@ if (seatsPatternDiv) {
     createRowsCols((roomDescription.rows), roomRows)
 }
 
+let burgerMenu = document.querySelector('.burger-menu')
 
-
+function burger() {
+    if (burgerMenu) {
+        burgerMenu.addEventListener('click', function() {
+            let headerAsideBar = document.querySelector('.header-aside-bar')
+            headerAsideBar.classList.toggle('nav-active')
+            burgerMenu.classList.toggle('burger-cross')
+        })
+    }
+}
+burger()
 
 
 

@@ -5,21 +5,39 @@
     height: 100vh;
     z-index: 1000;
     overflow: hidden;
+    transition: linear .3s;
+    @media (max-width: 1180px) {
+        width: 100vw;
+        height: 60px;
+        // overflow: unset;
+    }
     .background {
         position: absolute;
         width: 230px;
         height: 100vh;
         background: linear-gradient(#6E49FF, #3A1CB3) ;
+        @media (max-width: 1180px) {
+            width: 100vw;
+            height: 60px;
+            background: linear-gradient(to right, #6E49FF, #3A1CB3) ;
+        }
     }
     .bar-wrapper {
         padding-left: 50px;
         padding-bottom: 50px;
         padding-top: 50px;
         height: 90vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // justify-content: space-between;
+        @media (max-width: 1180px) {
+            flex-direction: row;
+            height: 60px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 0;
+        }
     }
    
     img {
@@ -30,11 +48,36 @@
     }
 }
 
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: calc(90vh - 50px);
+    padding-bottom: 50px;
+    @media (max-width: 1180px) {
+        flex-direction: row;
+        width: 100vw;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        align-items: center;
+    }
+}
+
 ._aside-logo {
     position: relative;
+    text-align: unset;
+    @media (max-width: 1180px) {
+        text-align: center;
+        width: 100px;
+        margin: 0 auto;
+        z-index: 500;
+    }
 }
 
 .logo {
+    z-index: 500;
     font-family: 'Blogger Sans';
     font-size: 32px;
     line-height: 35px;
@@ -47,8 +90,8 @@
 
 #city {
     position: relative;
-    margin-top: 20px;
-    margin-right: 2rem;
+    // margin-top: 20px;
+    // margin-right: 2rem;
     width: 90px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
@@ -75,19 +118,131 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     color: white;
+    @media (max-width: 1180px) {
+        // display: none;
+        background: linear-gradient(to right, #6E49FF, #3A1CB3) ;
+        height: 240px;
+        width: 100vw;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        justify-content: space-evenly;
+        a {
+            text-align: center;
+        }
+    }
     a { 
         text-decoration: none;
         color: white;
     }
+    
 
+}
+
+.burger-menu {
+    margin-right: 15px;
+    position: relative;
+    z-index: 100;
+    width: 15px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    display: none;
+    transition: linear .3s;
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 15px;
+        height: 2px;
+        top: 6px;
+        right: 4px;
+        background-color: white;
+        border-radius: 2px;
+        transition: linear .3s;
+
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 15px;
+        height: 2px;
+        bottom: 6px;
+        right: 4px;
+        background-color: white;
+        border-radius: 2px;
+        transition: linear .3s;
+
+    }
+    @media (max-width: 1180px) {
+        display: block;
+    }
+}
+
+.burger-cross {
+    margin-right: 17px;
+    transform: rotate(-270deg);
+    background-color: transparent;
+    transition: linear .3s;
+    &::after {
+        transform: rotate(45deg);
+        top: 0;
+        right: 0;
+    }
+    &::before {
+        transform: rotate(-45deg);
+        bottom: 0;
+        right: 0;
+    }
 }
 
 .contacts {
     position: relative;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
+    @media (max-width: 1180px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #6E49FF, #3A1CB3) ;
+        position: inherit;
+        top: 300px;
+        width: 100vw;
+        height: 86px;
+        right: 0;
+        border-top: 2px solid #ffffff2e;
+       
+    }
     a {
         color: white;
         text-decoration: none;
     }
+}
+
+.cinema-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 7rem;
+    @media (max-width: 1180px) {
+        margin-left: 15px;
+    }
+
+}
+
+.effect-circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    z-index: 500;
+    top: 0;
+    right: 0;
+
+}
+
+.nav-active {
+    height: 400px;
+    transition: linear .3s;
 }

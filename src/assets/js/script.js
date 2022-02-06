@@ -219,6 +219,7 @@ function insertFilm(el) {
     let div = document.createElement('div')
 
     div.setAttribute('class', 'film-presentation')
+    div.setAttribute('data-name', `${el.alt}`)
     div.innerHTML = `<img src= "${el.image}" alt="${el.alt}">` 
         + `<div class="film-name">`
         + ` <h5>${el.name}</h5>`
@@ -257,7 +258,7 @@ let filmsData = [{
 },
 
 {
-    alt: 'green book',
+    alt: 'green_book',
     image: 'assets/images/greenbook_m.jpg',
     name: 'Зеленая книга',
     parental: '16+',
@@ -306,8 +307,16 @@ let filmsData = [{
 
 ]
 
-
 filmsData.forEach(insertFilm)
+function filmsDataHref() {
+    let greenBookBlock = document.querySelector('[data-name = "green_book"]')
+    if (greenBookBlock) {
+        greenBookBlock.addEventListener('click', function() {
+            location.href = 'green-book-tickets.html'
+        })
+    }
+}
+filmsDataHref()
 
 // =================рисуем стульчики=============================
 
@@ -676,6 +685,7 @@ function rowsColsShape() {
     if (seatsPatternDiv) {
         roomColumns.style.width = (seatsPatternDiv.offsetWidth) + 'px'
         roomRows.style.height = (seatsPatternDiv.offsetHeight) + 'px'
+        // roomColumns.style.marginLeft = 
         roomColumns.style.marginLeft = (document.querySelector('.seats-wrapper').offsetWidth - seatsPatternDiv.offsetWidth) + 'px'
     }
 }

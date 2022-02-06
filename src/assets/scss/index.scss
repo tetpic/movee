@@ -95,6 +95,9 @@
     overflow: hidden;
     height: 100vh;
     max-height: 1030px;
+    @media (max-width: 1180px) {
+        display: none;
+    }
     .background__image {
         margin: 0 auto;
         width: -webkit-fill-available;

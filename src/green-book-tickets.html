@@ -86,8 +86,8 @@ title: GreenBookTickets
 </header>
 
 <main>
+    <div class="wrapper">
     <div class="schedule-header">
-        <div class="wrapper">
             <h2>Расписание сеансов</h2>
             {{> dates }}
             <!-- <div class="dates">
@@ -117,7 +117,7 @@ title: GreenBookTickets
     
             </div> -->
     
-            <div class="seanses"></div>
+            <div class="seanses room-seanses"></div>
         </div>
     </div>
    
@@ -147,12 +147,14 @@ title: GreenBookTickets
                 <div class="screen">
                     <img src="assets/images/green_book_l.jpg" alt="green-book-screen">
                 </div>
+                <div class="seats-main-wrapper">
 
-            <div class="seats-wrapper">
-                <ul class="seats-rows"></ul>
-                <div class="seats-pattern"></div>
-            </div>
-             <ul class="seats-columns"></ul>
+                    <div class="seats-wrapper">
+                        <ul class="seats-rows"></ul>
+                        <div class="seats-pattern"></div>
+                    </div>
+                     <ul class="seats-columns"></ul>
+                </div>
             </div>
 
             <div class="picked__seats-cost">

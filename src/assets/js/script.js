@@ -1,6 +1,6 @@
 "use strict"
 
-
+// ===============swipers=====================
 const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     centeredSlides: true,
@@ -25,7 +25,7 @@ let framesSLider = new Swiper('.frames-wrapper', {
     
 })
 
-
+// ====================films data==================]
 let greenBookData = {
     localName: '_green_book',
     name: 'Зеленая Книга',
@@ -102,7 +102,7 @@ let captainMarvelData = {
 }
 
 
-
+// ============добавляем варианты времени для выбора сеанса фильма============ъ
 let seanses = document.querySelector('.seanses');
 
 function createDates(filmObj, divTarget) {
@@ -122,7 +122,7 @@ if (seanses) {createDates(greenBookData, seanses)}
 
 
 
-
+// =======расписание на главной странице=================
 let schedule = document.querySelector('.schedule')
 
 function scheduleMainFunction(film) {
@@ -167,9 +167,34 @@ function createScheduleCheck() {
 }
 createScheduleCheck()
 
+let dates = document.querySelectorAll('.date-body')
+
+function dateActive() {
+
+    function datesToggle() {
+        dates.forEach(el=> {
+            el.classList.remove('date-body-active')
+        })
+    }
+    dates.forEach(el=>el.addEventListener('click', ()=> {
+        let parentPosition = document.querySelector('.dates').getBoundingClientRect()
+        let rect = el.getBoundingClientRect()
+        let datesBullet = document.querySelector('.dates-pagination__bullet')
+        datesBullet.style.left = (rect.left)  + 'px'
+        datesBullet.style.width = rect.width + 'px'
+        datesToggle()
+        el.classList.add('date-body-active')
+    }))
+}
+    if (dates) {
+        dateActive()
+    }
+        
 
 
 
+
+// ============выбор фильма по нажатию на изображение в боковом слайдере на главной странице==========
 function sliderSelect() {
     let rightAsideSlider = document.querySelector('.right-cinema-slider')
     if (rightAsideSlider) {
@@ -196,6 +221,8 @@ function sliderSelect() {
 sliderSelect();
 
 
+
+// ===========буллет под выбором сегодня и скоро на главной странице=========
 function todayFilm() {
     let tf = document.querySelectorAll('.today__film')
     if (tf) {
@@ -232,7 +259,18 @@ function insertFilm(el) {
 } 
 
 
-let filmsData = [{
+let filmsData = [
+    {
+        alt: 'green_book',
+        image: 'assets/images/greenbook_m.jpg',
+        name: 'Зеленая книга',
+        parental: '16+',
+        description: 'комедия &#8226; драма &#8226; биография'
+    },
+    
+    
+    
+    {
     alt: 'captain_marvel',
     image:'assets/images/captain_marvel_m.jpg',
     name:'Капитан Марвел',
@@ -257,13 +295,7 @@ let filmsData = [{
     description: 'фантастика &#8226; боевик &#8226; триллер'
 },
 
-{
-    alt: 'green_book',
-    image: 'assets/images/greenbook_m.jpg',
-    name: 'Зеленая книга',
-    parental: '16+',
-    description: 'комедия &#8226; драма &#8226; биография'
-},
+
 
 {
     alt: 'drunk_parents',
@@ -308,6 +340,7 @@ let filmsData = [{
 ]
 
 filmsData.forEach(insertFilm)
+
 function filmsDataHref() {
     let greenBookBlock = document.querySelector('[data-name = "green_book"]')
     if (greenBookBlock) {
@@ -317,6 +350,9 @@ function filmsDataHref() {
     }
 }
 filmsDataHref()
+
+
+
 
 // =================рисуем стульчики=============================
 
@@ -552,6 +588,7 @@ function makinSeats() {
 makinSeats()
 
 
+// =============калькулятор и выбор места=============
 const prices = new Array();
 
 function addCostToArray(seats, activeIndex, arr, object) {
@@ -656,6 +693,10 @@ function seatsListener() {
 }
 seatsListener()
 
+
+
+// =======количество рядов и мест в зале в зависимости от зала===========
+
 let roomDescription = {
     number : 5,
     resolution : '2D',
@@ -664,6 +705,9 @@ let roomDescription = {
     time: '19:30',
 
 }
+
+
+
 
 function fillRoomData() {
     if (seatsPatternDiv) {
@@ -691,6 +735,39 @@ function rowsColsShape() {
 }
 rowsColsShape()
 
+
+// ============модальное окно ввода данных для оплаты============
+
+let modalWindow = document.querySelector('.modal-window')
+
+function modalToggle() {
+    let button = document.querySelector('.buy-tickets')
+    let closeButton = document.querySelector('.close')
+    let modalBackground = document.querySelector('.modal-background')
+    let modalWindowWrapper = document.querySelector('.modal-window-wrapper')
+    button.addEventListener('click', ()=> {
+        modalWindow.querySelector('.modal-pay').innerText = 'Оплатить ' + folding(prices) + 'P'
+        modalWindow.classList.add('modal-active')
+        modalBackground.style.display = 'block'
+        modalWindowWrapper.style.display = 'block'
+      
+    })
+    closeButton.addEventListener('click', ()=> {
+        modalWindow.classList.remove('modal-active')
+        modalBackground.style.display = ''
+        modalWindowWrapper.style.display = ''
+
+    })
+  
+
+}
+modalToggle()
+
+
+
+
+
+
 // ===========create lis with numbers to columns and rows in thr room=============
 function iteratorItems(num, line) {
     let li = document.createElement('li')
@@ -711,6 +788,8 @@ if (seatsPatternDiv) {
 }
 
 let burgerMenu = document.querySelector('.burger-menu')
+
+// =========бургер-меню для адаптива=============
 
 function burger() {
     if (burgerMenu) {

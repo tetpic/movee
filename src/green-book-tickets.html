@@ -183,6 +183,46 @@ title: GreenBookTickets
                 </div>
 
                 <button class="buy-tickets">Купить</button>
+                <div class="modal-background"></div>
+
+                <div class="modal-window-wrapper">
+                    <div class="modal-window">
+                        <div class="close"></div>
+                        <h3>Оплата билетов</h3>
+                        <label class="radio-button">
+                            <input type="checkbox"></input>
+                            <div class="checkbox-text"> У меня есть Movee карта</div>
+                        </label>
+                        <div class="modal-telephone">
+                            <p>Телефон</p>
+                                <input type="tel" name="telephone" placeholder="+7(___)-___-__-__" id="tel-input">
+                                <p class="telephone-description">На указанный номер телефона мы отправим вам код, с помощью которого вы сможете получить купленные билеты на кассе</p>
+                        </div>
+                        <div class="modal-card-data">
+                            <div class="card-header">
+                                <img src="assets/images/svg/bricks.svg" alt="cardblock">
+                                <p>Данные банковской карты</p>
+                            </div>
+                            <label for="card-number" class="card-number">Номер карты
+                                <input type="number" name="" id="">
+                            </label>
+                            <label for="valid-thru" class="valid-thru">
+                                Срок действия
+                                <input type="number">
+                            </label>
+                            <label for="cardholder" class="cardholder">
+                                Имя владельца
+                                <input type="text" name="cardholder" id="cardholder">
+                            </label>
+                            <label for="cvc" class="cvc">
+                                CVC
+                                <input type="number" name="cvc" id="cvc">
+                            </label>
+    
+                        </div>
+                        <button class="modal-pay">пример</button>
+                    </div>
+                </div>
 
 
             </div>

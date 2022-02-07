@@ -29,8 +29,15 @@
     margin-top: 100px;
     align-items: center;
     margin-bottom: 40px;
+    @media (max-width: 400px) {
+        margin-top: 55px;
+        flex-direction: column;
+    }
     ._news {
         margin-top: 0;
+        @media (max-width: 560px) {
+            font-size: 30px;
+        }
     }
 }
 
@@ -38,20 +45,29 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-   
+    @media (max-width:1780px) {
+        margin: 20px;
+    }
 }
 
 .news-block {
     color: white;
     height: 480px;
     position: relative;
-    border-radius: 10px;
+    border-radius: 25px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
     overflow: hidden;
     margin-bottom: 40px;
+    @media (max-width: 560px) {
+        height: 300px;
+    }
+    // @media (max-width:950px) {
+    //     height: 300px;
+    // }
+
     form {
         z-index: 100;
     }
@@ -72,21 +88,28 @@
         
     }
     img{
+        height: 100%;
         width: 100%;
-        object-fit: fill;
-        // height: 100%;
+        object-fit: cover;
         z-index: 0;
         position: absolute;
         top: 0;
         left: 0;
         filter: brightness(.7);
+        
     }
     .news__date {
         z-index: 100;
         height: 140px;
+        @media (max-width: 560px) {
+            height: 20px;
+        }
     }
     .news__date-header {
         z-index: 100;
+        @media (max-width: 560px) {
+            font-size: 18px;
+        }
     }
     .news__desc {
         z-index: 100;
@@ -94,6 +117,9 @@
         font-weight: 300;
         line-height: 24px;
         opacity: .8;
+        @media (max-width: 560px) {
+            font-size: 12px;
+        }
     }
 }
 
@@ -104,14 +130,33 @@
     height: 382px;
     z-index: 100;
     margin: 50px;
+    @media (max-width: 560px) {
+        height: 90%;
+        margin: 15px;
+    }
 }
 
+
+
 ._long {
-    width: 878px;
-    // flex-basis: 2;
+    max-width: 878px;
+    width: 48vw;
 }
 
 ._short {
-    width: 572px;
-    // flex-basis: 1;
+    max-width: 572px;
+    width: 30.5vw;
+}
+
+._long, ._short {
+    @media (max-width: 1290px) {
+        max-width: unset;
+        width: 70vw;
+    }
+    @media (max-width: 1180px) {
+        width: 45vw;
+    }
+    @media (max-width: 950px) {
+        width: 100%;
+    }
 }

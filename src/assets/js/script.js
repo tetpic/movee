@@ -26,6 +26,131 @@ let framesSLider = new Swiper('.frames-wrapper', {
 })
 
 // ====================films data==================]
+let filmsData = [
+    {
+        alt: 'green_book',
+        image: 'assets/images/greenbook_m.jpg',
+        name: 'Зеленая книга',
+        parental: '16+',
+        description: 'комедия &#8226; драма &#8226; биография',
+        imageUrl: 'assets/images/greenbook_m.jpg',
+        ticketsHref: '/green-book-tickets.html',
+        schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '20:05'],
+        genres: [' Комедия ', ' Драма ', ' Биография '],
+        year: '2019',
+        country: 'США',
+        director: 'Питер Фарелли',
+        time: '02:10',
+        trailerURL: '',
+    },
+    
+    
+    
+    {
+        name:'Капитан Марвел',
+        alt: 'captain_marvel',
+        image:'assets/images/captain_marvel_m.jpg',
+        parental: '16+',
+        description: 'фантастика &#8226; боевик &#8226; приключения',
+        name: 'Капитан Марвел',
+        ticketsHref: '/captain_marvel_tickets.html',
+        imageUrl: 'assets/images/captain_marvel_m.jpg',
+        schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30','20:05','20:55','21:25','22:05','23:15','00:35',],
+        genres: [' Фантастика',' Боевик',' Приключения',],
+        year: '2019',
+        country: 'США',
+        director: 'Анна Боден, Райан Флек',
+        time: '02:03',
+        trailerURL: '',
+    },
+
+    {
+        name: 'Как приручить дракона',
+        alt: 'pet_dragon',
+        image: 'assets/images/pet_dragons_m.jpg',
+        parental: '6+',
+        description: 'мультфильм &#8226; фентези &#8226; боевик',
+        ticketsHref: '/pet_dragons_tickets.html',
+        imageUrl: 'assets/images/pet_dragons_m.jpg',
+        schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30',],
+        genres: [' Мультфильм',' Фентези', ' Боевик',],
+        year: '2019',
+        country: 'США',
+        director: 'Дин ДеБлуа',
+        time: '01:44',
+        trailerURL: '',
+    },
+
+    {
+        name: 'Алита: Боевой Ангел',
+        alt: 'alita',
+        image: 'assets/images/alita_m.jpg',
+        parental: '6+',
+        description: 'фантастика &#8226; боевик &#8226; триллер',
+        ticketsHref: '/alita_tickets.html',
+        imageUrl: 'assets/images/alita_m.jpg',
+        schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '21:00'],
+        genres: [' Фантастика ', ' боевик ', ' триллер ',],
+        year: '2019',
+        country: 'США',
+        director: 'Роберт Родригес',
+        time: '02:01',
+        trailerURL: '',
+    },
+
+
+
+    {
+        name: 'Родители легкого поведения',
+        alt: 'drunk_parents',
+        image: 'assets/images/drunk_parents_m.jpg',
+        parental: '16+',
+        description: 'комедия',
+        ticketsHref: '/drunk_parents_tickets.html',
+        schedule: ['13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30'],
+        genres: [' Комедия '],
+        year: '2019',
+        country:  'США',
+        director: 'Питер Фарелли',
+        time: '01:36',
+        trailerURL: '',
+    },
+
+    {
+       alt: 'van_goghs',
+       image: 'assets/images/van_goghs_m.jpg',
+       name: 'Ван Гоги',
+       parental: '16+',
+       description: 'драма'
+    },
+
+    {
+        alt: 'alien',
+        image: 'assets/images/alien_m.jpg',
+        name: 'Чужой',
+        parental: '16+',
+        description: 'ужасы &#8226; фантастика &#8226; триллер'
+    },
+
+    {
+        alt: 'guests',
+        image: 'assets/images/guests_m.jpg',
+        name: 'Гости',
+        parental: '16+',
+        description: 'триллер &#8226; ужасы &#8226; мелодрама'
+    },
+
+    {
+        alt: 'happy_death_day',
+        image: 'assets/images/happy_death_day_m.jpg',
+        name: 'Счастливого дня смерти',
+        parental: '16+',
+        description: 'ужасы &#8226; фантастика &#8226; детектив'
+    },
+
+]
+
+
 let greenBookData = {
     localName: '_green_book',
     name: 'Зеленая Книга',
@@ -41,83 +166,133 @@ let greenBookData = {
     trailerURL: '',
 }
 
-let parentsData = {
-    localName: '_drunk_parents',
-    name: 'Родители легкого поведения',
-    ticketsHref: '/drunk_parents_tickets.html',
-    imageUrl: 'assets/images/drunk_parents_m.jpg',
-    schedule: ['13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30'],
-    genres: [' Комедия '],
-    year: '2019',
-    country:  'США',
-    director: 'Питер Фарелли',
-    ageLimit: '16+',
-    time: '01:36',
-    trailerURL: '',
-}
+// let parentsData = {
+//     localName: '_drunk_parents',
+//     name: 'Родители легкого поведения',
+//     ticketsHref: '/drunk_parents_tickets.html',
+//     imageUrl: 'assets/images/drunk_parents_m.jpg',
+//     schedule: ['13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30'],
+//     genres: [' Комедия '],
+//     year: '2019',
+//     country:  'США',
+//     director: 'Питер Фарелли',
+//     ageLimit: '16+',
+//     time: '01:36',
+//     trailerURL: '',
+// }
 
-let alitaData = {
-    localName: '_alita',
-    name: 'Алита: Боевой Ангел',
-    ticketsHref: '/alita_tickets.html',
-    imageUrl: 'assets/images/alita_m.jpg',
-    schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '21:00'],
-    genres: [' Фантастика ', ' боевик ', ' триллер ',],
-    year: '2019',
-    country: 'США',
-    director: 'Роберт Родригес',
-    ageLimit: '16+',
-    time: '02:01',
-    trailerURL: '',
-}
+// let alitaData = {
+//     localName: '_alita',
+//     name: 'Алита: Боевой Ангел',
+//     ticketsHref: '/alita_tickets.html',
+//     imageUrl: 'assets/images/alita_m.jpg',
+//     schedule: ['10:15', '10:55', '12:05', '13:15', '13:55', '14:45', '16:15', '17:00', '18:05', '18:55', '19:30', '21:00'],
+//     genres: [' Фантастика ', ' боевик ', ' триллер ',],
+//     year: '2019',
+//     country: 'США',
+//     director: 'Роберт Родригес',
+//     ageLimit: '16+',
+//     time: '02:01',
+//     trailerURL: '',
+// }
 
-let petDragonsData = {
-    localName: '_pet_dragon',
-    name: 'Как приручить дракона',
-    ticketsHref: '/pet_dragons_tickets.html',
-    imageUrl: 'assets/images/pet_dragons_m.jpg',
-    schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30',],
-    genres: [' Мультфильм',' Фентези', ' Боевик',],
-    year: '2019',
-    country: 'США',
-    director: 'Дин ДеБлуа',
-    ageLimit: '6+',
-    time: '01:44',
-    trailerURL: '',
-}
+// let petDragonsData = {
+//     localName: '_pet_dragon',
+//     name: 'Как приручить дракона',
+//     ticketsHref: '/pet_dragons_tickets.html',
+//     imageUrl: 'assets/images/pet_dragons_m.jpg',
+//     schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30',],
+//     genres: [' Мультфильм',' Фентези', ' Боевик',],
+//     year: '2019',
+//     country: 'США',
+//     director: 'Дин ДеБлуа',
+//     ageLimit: '6+',
+//     time: '01:44',
+//     trailerURL: '',
+// }
 
-let captainMarvelData = {
-    localName: '_captain_marvel',
-    name: 'Капитан Марвел',
-    ticketsHref: '/captain_marvel_tickets.html',
-    imageUrl: 'assets/images/captain_marvel_m.jpg',
-    schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30','20:05','20:55','21:25','22:05','23:15','00:35',],
-    genres: [' Фантастика',' Боевик',' Приключения',],
-    year: '2019',
-    country: 'США',
-    director: 'Анна Боден, Райан Флек',
-    ageLimit: '16+',
-    time: '02:03',
-    trailerURL: '',
-}
+// let captainMarvelData = {
+//     localName: '_captain_marvel',
+//     name: 'Капитан Марвел',
+//     ticketsHref: '/captain_marvel_tickets.html',
+//     imageUrl: 'assets/images/captain_marvel_m.jpg',
+//     schedule: ['10:15','10:55','12:05','13:15','13:55','14:45','16:15','17:00','18:05','18:55','19:30','20:05','20:55','21:25','22:05','23:15','00:35',],
+//     genres: [' Фантастика',' Боевик',' Приключения',],
+//     year: '2019',
+//     country: 'США',
+//     director: 'Анна Боден, Райан Флек',
+//     ageLimit: '16+',
+//     time: '02:03',
+//     trailerURL: '',
+// }
 
 
 // ============добавляем варианты времени для выбора сеанса фильма============ъ
+
+
 let seanses = document.querySelector('.seanses');
+
+let storageFilmName = sessionStorage.getItem('filmName')
+
+let targetSeanses = document.querySelector(`.${storageFilmName}`)
+
+
 
 function createDates(filmObj, divTarget) {
   
         for(let i = 0; i < filmObj.schedule.length; i++) {
-            let a = document.createElement('a');
-                a.className = 'time__block';
-                a.href = filmObj.ticketsHref;
-                a.innerHTML = ((filmObj.schedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
-                divTarget.append(a);
+            let div = document.createElement('div');
+                div.className = 'time__block';
+                // div.href = filmObj.ticketsHref;
+                div.innerHTML = ((filmObj.schedule[i]) + '<span class ="mode__2d3d"> 2D </span>' );
+                divTarget.append(div);
         }
     }
 
 
 if (seanses) {createDates(greenBookData, seanses)}
+
+// ======при нажатии на элемент, получаем его индекс, чтобы после перехода 
+// на страницу с покупкой билетов, этот же элемент подсвечивался 
+// как выбранный ( не работает в мобильной версии и в блоке "расписание"))=============
+
+
+
+
+function getTimeBlockActiveIndex(filmName) {
+    let film = document.querySelector(`.${filmName}`)
+    let timeBlock = film.querySelectorAll('.time__block')
+    timeBlock.forEach(el=>el.addEventListener('click', (event)=> {
+        let activeIndex = Array.from(timeBlock).indexOf(event.target)
+        if (!timeBlock[activeIndex].classList.contains('time__block_active')) {
+            timeBlock.forEach(el => {el.classList.remove('time__block_active')})
+            sessionStorage.setItem(`index`, activeIndex)
+            sessionStorage.setItem(`filmName`, filmName)
+            console.log(sessionStorage.getItem('index'))
+            timeBlock[activeIndex].classList.add('time__block_active')
+        }
+        else {
+            timeBlock[activeIndex].classList.remove('time__block_active')
+            sessionStorage.removeItem('index')
+            sessionStorage.removeItem('filmName')
+        }
+    }))
+    if (sessionStorage.length > 0) {
+        let item = sessionStorage.getItem('index')
+        console.log(+item)
+        timeBlock[+item].classList.add('time__block_active')
+    }
+
+}
+function storageFilmCheck() {
+        if (seanses) {
+            seanses.classList.add(`${storageFilmName}`)
+            getTimeBlockActiveIndex(storageFilmName)
+        }
+}
+storageFilmCheck()
+
+
 
 
 
@@ -126,46 +301,64 @@ if (seanses) {createDates(greenBookData, seanses)}
 let schedule = document.querySelector('.schedule')
 
 function scheduleMainFunction(film) {
-    schedule.insertAdjacentHTML('beforeend', `<div class="schedule-item ${film.localName}">
-    <img src="${film.imageUrl}" alt="${film.name}">
-    <div class="schedule-desc">
-        <h3>${film.name}</h3>
-        <div class="desc-main">
-            <p>${film.year}</p>
-            <p>${film.country}</p>
-            <p>${film.director}</p>
-            <p>${film.genres}</p>
-            <p>${film.time}</p>
-            <p>${film.ageLimit}</p>
-        </div>
-        <div class="schedule-seanses"></div>
-        <div class="desc-details-trailer">
-            <div class="__detail">
-                <a href="${film.ticketsHref}"></a>
-                <p>Подробнее</p>
-            </div>
-            <div class="__trailer">
-                <a href="${film.trailerURL}"></a>
-                <p>Смотреть трейлер</p>
-            </div>
-        </div>
-    </div>
-</div>`)
-let filmDiv = document.querySelector(`.${film.localName}`)
-let thisFilm = filmDiv.querySelector('.schedule-seanses')
-if (schedule) {createDates(film, thisFilm)}
+    schedule.insertAdjacentHTML('beforeend', 
+        `<div class="schedule-item ${film.alt}">
+            <img src="${film.image}" alt="${film.name}">
+            <div class="schedule-desc">
+                <h3>${film.name}</h3>
+                <div class="desc-main">
+                    <p>${film.year}</p>
+                    <p>${film.country}</p>
+                    <p>${film.director}</p>
+                    <p>${film.genres}</p>
+                    <p>${film.time}</p>
+                    <p>${film.parental}</p>
+                </div>
+            </div>   
+
+            <div class="schedule-seanses-body">
+                <div class="schedule-seanses"></div>
+                <div class="desc-details-trailer">
+                    <div class="__detail">
+                        <a href="${film.ticketsHref}"></a>
+                        <p>Подробнее</p>
+                    </div>
+                    <div class="__trailer">
+                        <a href="${film.trailerURL}"></a>
+                        <p>Смотреть трейлер</p>
+                    </div>
+                </div>
+            </div>    
+        </div>`
+    )
+    let filmDiv = document.querySelector(`.${film.alt}`)
+    let thisFilm = filmDiv.querySelector('.schedule-seanses')
+    createDates(film, thisFilm);
 }
+
+
 
 function createScheduleCheck() {
     if (schedule) {
-        scheduleMainFunction(captainMarvelData)
-        scheduleMainFunction(petDragonsData)
-        scheduleMainFunction(alitaData)
-        scheduleMainFunction(parentsData)
-        scheduleMainFunction(greenBookData)
+        filmsData.forEach(el=> {
+           
+            // проверяем что у объекта фильма есть полные данные для отрисовки, их должно быть больше 10
+            if (Object.keys(el).length > 10) {
+                scheduleMainFunction(el)
+                getTimeBlockActiveIndex(el.alt)
+            }
+            
+            console.log(el.alt)
+        })
+        // scheduleMainFunction(greenBookData)
+        // scheduleMainFunction(captainMarvelData)
+        // scheduleMainFunction(petDragonsData)
+        // scheduleMainFunction(alitaData)
+        // scheduleMainFunction(parentsData)
     }
 }
 createScheduleCheck()
+
 
 let dates = document.querySelectorAll('.date-body')
 
@@ -177,7 +370,6 @@ function dateActive() {
         })
     }
     dates.forEach(el=>el.addEventListener('click', ()=> {
-        let parentPosition = document.querySelector('.dates').getBoundingClientRect()
         let rect = el.getBoundingClientRect()
         let datesBullet = document.querySelector('.dates-pagination__bullet')
         datesBullet.style.left = (rect.left)  + 'px'
@@ -259,85 +451,9 @@ function insertFilm(el) {
 } 
 
 
-let filmsData = [
-    {
-        alt: 'green_book',
-        image: 'assets/images/greenbook_m.jpg',
-        name: 'Зеленая книга',
-        parental: '16+',
-        description: 'комедия &#8226; драма &#8226; биография'
-    },
-    
-    
-    
-    {
-    alt: 'captain_marvel',
-    image:'assets/images/captain_marvel_m.jpg',
-    name:'Капитан Марвел',
-    parental: '16+',
-    // description: ['Фантастика', 'боевик', 'приключения',],
-    description: 'фантастика &#8226; боевик &#8226; приключения',
-},
-
- {
-    alt: 'pet_dragon',
-    image: 'assets/images/pet_dragons_m.jpg',
-    name: 'Как приручить дракона',
-    parental: '16+',
-    description: 'мультфильм &#8226; фентези &#8226; боевик'
-},
-
- {
-    alt: 'alita',
-    image: 'assets/images/alita_m.jpg',
-    name: 'Алита',
-    parental: '6+',
-    description: 'фантастика &#8226; боевик &#8226; триллер'
-},
 
 
-
-{
-    alt: 'drunk_parents',
-    image: 'assets/images/drunk_parents_m.jpg',
-    name: 'Родители легкого поведения',
-    parental: '16+',
-    description: 'комедия'
-},
-
- {
-    alt: 'van_goghs',
-    image: 'assets/images/van_goghs_m.jpg',
-    name: 'Ван Гоги',
-    parental: '16+',
-    description: 'драма'
-},
-
-{
-    alt: 'alien',
-    image: 'assets/images/alien_m.jpg',
-    name: 'Чужой',
-    parental: '16+',
-    description: 'ужасы &#8226; фантастика &#8226; триллер'
-},
-
- {
-    alt: 'guests',
-    image: 'assets/images/guests_m.jpg',
-    name: 'Гости',
-    parental: '16+',
-    description: 'триллер &#8226; ужасы &#8226; мелодрама'
-},
-
- {
-    alt: 'happy_death_day',
-    image: 'assets/images/happy_death_day_m.jpg',
-    name: 'Счастливого дня смерти',
-    parental: '16+',
-    description: 'ужасы &#8226; фантастика &#8226; детектив'
-},
-
-]
+// =====это костыль чтобы при нажатии в мобильной версии на фильм переходило к покупке билетов и описанию========
 
 filmsData.forEach(insertFilm)
 
@@ -761,7 +877,9 @@ function modalToggle() {
   
 
 }
-modalToggle()
+if (modalWindow) {
+    modalToggle()
+}
 
 
 

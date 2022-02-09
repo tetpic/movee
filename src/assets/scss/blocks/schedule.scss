@@ -5,6 +5,32 @@
     line-height: 88px;
     color: white;
     margin-top: 100px;
+    @media (max-width:900px) {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+}
+
+.filter-button {
+    display: none;
+    max-width: 345px;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background-color: rgba(31, 31, 31, 1);
+    box-shadow: 0px 15px 15px 10px #0d0d0db8;
+    border-radius: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(38, 210, 169, 1);
+    align-items: center;
+    justify-content: center;
+
+
+    @media (max-width: 830px) {
+        display: flex;
+    }
 }
 
 .schedule-film-filter {
@@ -14,6 +40,10 @@
     align-items: center;
     background: rgba(31, 31, 31, 1);
     color: rgba(255, 255, 255, 0.644);
+    @media (max-width: 830px) {
+        display: none;
+    }
+    
     .filter {
         margin-top: 30px;
         margin-left: 40px;
@@ -22,6 +52,9 @@
         width: 240px;
         border-bottom: solid 2px white;
         padding-bottom: 10px;
+        @media (max-width: 1000px) {
+            margin: 15px 10px 15px 15px;
+        }
     }
     select {
         font-size: 16px;
@@ -48,6 +81,11 @@
     background: rgba(0, 0, 0, 0.2);
     width: 540px;
     margin-right: 40px;
+    @media (max-width: 1000px) {
+        width: 20vw;
+        min-width: 200px;
+        margin-right: 15px;
+    }
     input {
         width: 100%;
         padding-left: 20px;
@@ -81,12 +119,36 @@
     flex-direction: column;
     color: white;
     padding: 50px 0px 100px 0px;
+    @media (max-width: 1780px) {
+        margin: 0px 20px 0px 20px;
+    }
+    @media (max-width:900px) {
+        padding: 20px 0px 20px 0px;
+    }
+    @media (max-width: 650px) {
+        margin: 0;
+    }
+   
     .schedule-item {
         margin-top: 30px;
         padding: 60px;
-        display: flex;
+        display: grid;
         background-color: #1F1F1F;
         border-radius: 10px;
+        justify-content: start;
+        grid-template-areas:
+        "a b"
+        "a c";
+        @media (max-width: 1780px) {
+            padding: 20px;
+        }
+        @media (max-width: 900px) {
+            grid-template-areas: "a b" "c c";
+        }
+        @media (max-width: 650px) {
+            padding: 15px;
+            border-radius: 0px;
+        }
     }
     img {
         width: 230px;
@@ -94,27 +156,54 @@
         background-color: gray;
         border-radius: 10px;
         margin-right: 20px;
+        grid-area: a;
+        @media (max-width: 650px) {
+            width: 104px;
+            height: 140px;
+        }
     }
     .desc-main {
         display: flex;
+        @media (max-width:1310px) {
+            flex-wrap: wrap;
+        }
+    }
+    p{
+        margin-right: 30px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: rgba(186, 185, 189, 1);
+        line-height: 20px;
+        @media (max-width:1310px) {
+            margin-right: 15px;
+        }
+        @media (max-width: 400px) {
+            font-size: 12px;
+        }
     }
     .schedule-desc {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        grid-area: b;
+        @media (max-width:900px) {
+            width: calc(90vw - 230px);
+            justify-content: flex-start;
+        }
+        @media (max-width: 650px) {
+            width: calc(100vw - 157px);
+        }
         h3{
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: 400;
             font-size: 24px;
+            @media (max-width: 400px) {
+                font-size: 16px;
+            }
+
         }
-        p{
-            margin-right: 30px;
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 16px;
-            font-weight: 300;
-            color: rgba(186, 185, 189, 1);
-            line-height: 20px;
-        }
+       
        
 
 
@@ -122,10 +211,50 @@
 
 }
 
+.schedule-seanses {
+    @media (max-width: 650px) {
+        flex-wrap: nowrap !important;
+        width: 90vw;
+        overflow: scroll;
+        height: 60px !important;
+        padding: 0px !important;
+        .time__block {
+            min-width: 85px ;
+        }
+    }
+    @media (max-width:400px) {
+        justify-content: flex-start !important;
+    }
+
+}
+
+.schedule-seanses-body {
+    display: flex;
+    grid-area: c;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    p{
+        margin-right: 30px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: rgba(186, 185, 189, 1);
+        line-height: 20px;
+    }
+}
+
 .desc-details-trailer {
     height: 100px;
     display: flex;
     align-items: flex-end;
+    @media (max-width: 650px) {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        // height: 50px;
+    }
     a{
         width: 40px;
         height: 40px;

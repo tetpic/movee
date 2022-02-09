@@ -5,6 +5,11 @@
     width: 880px;
     padding-left: 230px;
     padding-top: 50px;
+    @media (max-width: 1180px) {
+        width: 90%;
+        padding-left: unset;
+        padding-top: 70px;
+    }
     a {
         font-family: 'Source Sans Pro', sans-serif;
         color: rgba(38, 210, 169, 1);
@@ -12,6 +17,11 @@
         font-size: 20px;
         line-height: 25px;
         font-weight: 600;
+    }
+    iframe {
+        @media (max-width: 950px) {
+            width: 100% !important;
+        }
     }
 }
 
@@ -28,6 +38,10 @@
     opacity: .7;
     margin-top: 270px;
     margin-bottom: 30px;
+    @media (max-width: 1180px) {
+        margin-top: 30px;
+    }
+
 }
 
 .article-header {
@@ -36,6 +50,9 @@
     font-weight: 300;
     line-height: 75px;
     color: rgba(221, 221, 221, 1);
+    @media (max-width: 650px) {
+        font-size: 26px;
+    }
 }
 
 .article-main {
@@ -47,6 +64,10 @@
     opacity: .8;
     margin-top: 40px;
     margin-bottom: 60px;
+    @media (max-width: 650px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
 }
 

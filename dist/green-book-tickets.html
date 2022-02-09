@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVEE</title>
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/index.min.css">
+
+</head>
+<body>
+<div class="page">
+
+    
+    <!-- ==================SIDEBAR================== -->
+                <aside class="header-aside-bar">
+                    <div class="background"></div>
+                    <div class="bar-wrapper">
+                            <h2 class="logo _aside-logo">
+                                <a href="/index.html">
+                                    Movee
+                                </a> 
+                            </h2>
+                        <div class="top">
+                
+                        <div class="cinema-location">
+                            <img src="assets/images/svg/pin.svg" alt="geo-pin">
+                            <select name="city" id="city">
+                                <option value="Ижевск">Ижевск</option>
+                                <option value="Сарапул">Сарапул</option>
+                                <option value="Воткинск">Воткинск</option>
+                                <option value="Глазов">Глазов</option>
+                            </select>
+                        </div>
+                        
+                        <div class="burger-menu"></div>
+                
+                        <div class="sections">
+                            <a href='/schedule.html'>Расписание</a>
+                            <a href='/news.html'>Новости</a>
+                            <a href='/promo.html'>Акции</a>
+                            <a href='/contacts.html'>Контакты</a>
+                        </div>
+                        
+                        <div class="contacts">
+                            <a href="tel:88005553535">8 800 555 35 35</a>
+                        </div>
+                        <!-- <div class="effect-circle"></div> -->
+                        </div>
+                
+                    </div>
+                </aside>    <!-- ==================================================-->
+
+  
+                <div class="main-background-images">
+                    <img class='background__image' src="assets/images/green-book-main-bcg.jpg" alt="green-book-background">
+                    <div class="background__image _gradient-second-page "></div>
+                </div>
+                
+                <header class='film-header '>
+                    <div class=" inset-wrapper">
+                    <div class="film-header__image">
+                        <img class="poster" src="assets/images/green-book-poster.jpg" alt="green-book-poster">
+                        <form action="https://www.youtube.com/watch?v=e6b9urtUJt0" target="_blank" class="watch__trailer">
+                            <!-- это должна быть ссылка, а не кнопка, по которой надо перейти, и включить в модальном окошке трейлер с ютуба -->
+                            <button class="play__trailer">
+                                <img src="assets/images/svg/green_triangle_play.svg" alt="play-triangle">
+                            </button>
+                            <p>Смотреть трейлер</p>
+                        </form>
+                    </div>
+                    <div class="movie-descriptions">
+                        <h1>Зеленая книга</h1>
+                        <div class="ratio">
+                            <div class="ratio__element">
+                                <img src="assets/images/svg/imdb.svg" alt="imdb-logo">
+                                <p>8.3</p>
+                            </div>
+                            <div class="ratio__element">
+                                <img src="assets/images/svg/kinopoisk.svg" alt="kinopoisk-logo">
+                                <p>8.3</p>
+                            </div>
+                        </div>
+                
+                        <p>Утонченный светский лев, богатый и талантливый 
+                            музыкант нанимает в качестве водителя и 
+                            телохранителя человека, который менее всего 
+                            подходит для этой работы. Тони «Болтун» — 
+                            вышибала, не умеющий держать рот на замке и 
+                            пользоваться столовыми приборами, зато он 
+                            хорошо работает кулаками. Это турне навсегда 
+                            изменит жизнь обоих.</p>
+                
+                        <table>
+                            <tr>
+                                <td>Год</td>
+                                <td>2019</td>
+                            </tr>
+                            <tr>
+                                <td>Страна</td>
+                                <td>США</td>
+                            </tr>
+                            <tr>
+                                <td>Режиссер</td>
+                                <td>Роберт Родригес</td>
+                            </tr>
+                            <tr>
+                                <td>Жанр </td>
+                                <td>Комедия драма биография</td>
+                            </tr>
+                            <tr>
+                                <td>Длительность</td>
+                                <td>2.01</td>
+                            </tr>
+                            <tr>
+                                <td>Возрастное ограничение </td>
+                                <td>16+</td>
+                            </tr>
+                        </table>
+                
+                    </div>
+                    <div class="cast">
+                        <div class="casting">В ГЛАВНЫХ РОЛЯХ:</div>
+                        <div class="actor">
+                            <img src="assets/images/viggo-mortensen.jpg" alt="viggo-mortensen">
+                            <p>Вигго <br> Мортенсен</p>
+                        </div>
+                
+                        <div class="actor">
+                            <img src="assets/images/mahershala-ali.jpg" alt="mahershala-ali">
+                            <p>Махершала <br> Али</p>
+                        </div>
+                
+                    </div>
+                </div>
+                </header>
+                
+                <main>
+                    <div class="wrapper">
+                    <div class="schedule-header">
+                            <h2>Расписание сеансов</h2>
+                            <div class="dates-wrapper">
+                                <div class="dates">
+                                    <div class="date-body date-body-active">
+                                        <div class="day">Сегодня</div>
+                                        <div class="date">12 Марта</div>
+                                    </div>
+                                    <div class="date-body">
+                                        <div class="day">Завтра</div>
+                                        <div class="date">13 Марта</div>
+                                    </div>
+                                    <div class="date-body">
+                                        <div class="day">Четверг</div>
+                                        <div class="date">14 Марта</div>
+                                    </div>
+                                    <div class="date-body">
+                                        <div class="day">Пятница</div>
+                                        <div class="date">15 Марта</div>
+                                    </div>
+                                    <div class="date-body">
+                                        <div class="day">Суббота</div>
+                                        <div class="date">16 Марта</div>
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="dates-pagination">
+                                <div class="dates-pagination__bullet"></div>
+                            </div>            <!-- <div class="dates">
+                                <div class="week">
+                                    <div class="day">Сегодня</div>
+                                    <div class="date">12 Марта</div>
+                                </div>
+                                <div class="week">
+                                    <div class="day">Завтра</div>
+                                    <div class="date">13 Марта</div>
+                                </div>
+                                <div class="week">
+                                    <div class="day">Четверг</div>
+                                    <div class="date">14 Марта</div>
+                                </div>
+                                <div class="week">
+                                    <div class="day">Пятница</div>
+                                    <div class="date">15 Марта</div>
+                                </div>
+                                <div class="week">
+                                    <div class="day">Суббота</div>
+                                    <div class="date">16 Марта</div>
+                                </div>
+                                
+                            </div>
+                            <div class="dates-pagination">
+                    
+                            </div> -->
+                    
+                            <div class="seanses room-seanses"></div>
+                        </div>
+                    </div>
+                   
+                    <div class="wrapper">
+                    <div class="choose-seats-block">
+                            <div class="room__number">
+                                <h3>Зал 5</h3>
+                                <div class="seats-statuses">
+                    
+                                    <div class="seat-status">
+                                        <img src="assets/images/svg/free-seat.svg" alt="free-seat">
+                                        <div>Свободные Места</div>
+                                    </div>
+                    
+                                    <div class="seat-status">
+                                        <img src="assets/images/svg/sold-seat.svg" alt="sold-seat">
+                                        <div>Проданные Места</div>                
+                                    </div>
+                    
+                                    <div class="seat-status">
+                                        <img src="assets/images/svg/seat.svg" alt="seat">
+                                        <div>Выбранные Места</div>                
+                                    </div>
+                    
+                                </div>
+                
+                                <div class="screen">
+                                    <img src="assets/images/green_book_l.jpg" alt="green-book-screen">
+                                </div>
+                                <div class="seats-main-wrapper">
+                
+                                    <div class="seats-wrapper">
+                                        <ul class="seats-rows"></ul>
+                                        <div class="seats-pattern"></div>
+                                    </div>
+                                     <ul class="seats-columns"></ul>
+                                </div>
+                            </div>
+                
+                            <div class="picked__seats-cost">
+                                <div class="your-seats">
+                                    <h3>Ваши места</h3>
+                                    <p class="picked-cinema-name">Зеленая Книга</p>
+                                    <div class="picked-cinema-data">
+                                        <div class="picked-cinema__date">14.03.2019</div>
+                                        <div class="picked-cinema__time"></div>
+                                        <div class="picked-cinema__resolution"></div>
+                                        <div class="picked-cinema__room"></div>
+                                    </div>
+                                </div>
+                                <div class="choosen-tickets">
+                                    <!-- <div class="choosen__ticket">
+                                    <div class="picked-row-seat">7ряд, 11 место</div>
+                                    <div class="picked-seat-cost">
+                                       <p>300 P</p> 
+                                       <button class='x-button'>X</button>
+                                    </div>
+                                </div> -->
+                                </div>
+                                <div class="total">
+                                    <p>ИТОГО</p>
+                                    <div class="summ"> 0</div>
+                                </div>
+                
+                                <button class="buy-tickets">Купить</button>
+                                <div class="modal-background"></div>
+                
+                                <div class="modal-window-wrapper">
+                                    <div class="modal-window">
+                                        <div class="close"></div>
+                                        <h3>Оплата билетов</h3>
+                                        <label class="radio-button">
+                                            <input type="checkbox"></input>
+                                            <div class="checkbox-text"> У меня есть Movee карта</div>
+                                        </label>
+                                        <div class="modal-telephone">
+                                            <p>Телефон</p>
+                                                <input type="tel" name="telephone" placeholder="+7(___)-___-__-__" id="tel-input">
+                                                <p class="telephone-description">На указанный номер телефона мы отправим вам код, с помощью которого вы сможете получить купленные билеты на кассе</p>
+                                        </div>
+                                        <div class="modal-card-data">
+                                            <div class="card-header">
+                                                <img src="assets/images/svg/bricks.svg" alt="cardblock">
+                                                <p>Данные банковской карты</p>
+                                            </div>
+                                            <label for="card-number" class="card-number">Номер карты
+                                                <input type="number" name="" id="">
+                                            </label>
+                                            <label for="valid-thru" class="valid-thru">
+                                                Срок действия
+                                                <input type="number">
+                                            </label>
+                                            <label for="cardholder" class="cardholder">
+                                                Имя владельца
+                                                <input type="text" name="cardholder" id="cardholder">
+                                            </label>
+                                            <label for="cvc" class="cvc">
+                                                CVC
+                                                <input type="number" name="cvc" id="cvc">
+                                            </label>
+                    
+                                        </div>
+                                        <button class="modal-pay">пример</button>
+                                    </div>
+                                </div>
+                
+                
+                            </div>
+                         
+                        </div>
+                    </div>
+                
+                
+                    <div class="movie-frames">
+                        <div class="wrapper">
+                            <div class="frames-wrapper">
+                                <div class="swiper-wrapper">
+                
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/GBframe1.jpg" alt="gbframe1">
+                                    </div>
+                
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/GBframe2.jpg" alt="gbframe2">
+                                    </div>
+                
+                                    <div class="swiper-slide">
+                                    </div>
+                
+                                    <div class="swiper-slide">
+                                    </div>
+                
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                
+                            </div>
+                        </div>
+                    </div>
+                   
+                
+                
+                </main>
+                
+                
+                
+
+    <!-- ======================FOOOOTER============= -->
+                <footer>
+                    
+                        <div class="footer-socials">
+                
+                            <div class="footer-leftside">
+                                <div class="footer-links">
+                                    <a href="vk.com">
+                                        <img src="assets/images/svg/vk.svg" alt="vk">
+                                    </a>
+                                    <a href="facebook.com">
+                                        <img src="assets/images/svg/fb.svg" alt="facebook">
+                                    </a>
+                                    <a href="twitter.com">
+                                        <img src="assets/images/svg/tw.svg" alt="twitter">
+                                    </a>
+                                    <a href="instagram.com">
+                                        <img src="assets/images/svg/inst.svg" alt="instagram">
+                                    </a>
+                                    <a href="youtube.com">
+                                        <img src="assets/images/svg/yt.svg" alt="youtube">
+                                    </a>
+                                </div>
+                                <p class="footer-copyrights"> © 2007 — 2019 Movee. Все права защищены </p>
+                            </div>
+                
+                
+                            <div class="footer-middle">
+                                <p class="footer-subscribe">Подпишитесь на нашу новостную рассылку</p>
+                                    <div class="mail-enter-form">
+                
+                                        <label for="email">
+                                          <p name='email' class="email__placeholder">
+                                            <img src="assets/images/svg/convert.svg" alt="">  
+                                            E-mail:
+                                          </p>
+                                          <input type="email" name="email" id="email">
+                                        </label>
+                                        <button class="submit-button">
+                                            <img src="assets/images/svg/right_arrow.svg" alt="submit-arrow">
+                                        </button>
+                                          
+                                      </div>
+                                
+                            </div>
+                
+                            <div class="footer-right">
+                                <div class="footer-mobile-app">
+                                    <p class="footer-subscribe">Мобильное приложение Movee</p>
+                                    <div class="app__links">
+                                        <a href="appstore.com">
+                                            <img src="assets/images/svg/btn_sch_appstore.svg" alt="app-store">
+                                        </a>
+                                        <a href="googleplay.com">
+                                            <img src="assets/images/svg/btn_sch_google.svg" alt="google-play">
+                                        </a>
+                                    </div>
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                       
+                    </footer>
+<!-- <div class="page">`</div> -->
+</div>
+                <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+                <!-- <script type="text/javascript" src="script.js"></script> -->
+                <script src="assets/js/app.js"></script>
+                </body>
+                </html>

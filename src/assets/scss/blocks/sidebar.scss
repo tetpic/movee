@@ -27,10 +27,6 @@
         padding-bottom: 50px;
         padding-top: 50px;
         height: 90vh;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: flex-start;
-        // justify-content: space-between;
         @media (max-width: 1180px) {
             flex-direction: row;
             height: 60px;
@@ -91,8 +87,6 @@
 #city {
     margin-left: 5px;
     position: relative;
-    // margin-top: 20px;
-    // margin-right: 2rem;
     width: 90px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
@@ -102,7 +96,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color:#6c47fc;
-    background-image: url('../images/svg/_triangle.svg');
+    background-image: url('assets/images/svg/_triangle.svg');
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 10px;

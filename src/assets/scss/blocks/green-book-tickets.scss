@@ -437,6 +437,8 @@
         width: 20px;
         height: 23px;
         position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     ._occupied {
         background-image: url(../images/svg/sold-seat.svg);
@@ -448,7 +450,8 @@
         transition: linear .1s;
         box-shadow: 0px 7px 9px -1px black;    
         &:hover {
-          box-shadow: 0px 2px 12px 0px #37ff50f0;
+            background-color: #37ff5066;
+            box-shadow: 0px 2px 12px 0px #37ff50f0;
         }
     }
     .choosen {
